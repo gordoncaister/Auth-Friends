@@ -1,5 +1,6 @@
 import React,{useEffect, useState} from "react"
 import {axiosWithAuth} from "./axiosWithAuth"
+import MakeFriend from "./MakeFriend"
 
 
 const Friends = () => {
@@ -21,7 +22,18 @@ const Friends = () => {
     console.log(friends)
     return (
         <>
-        Hello from friends?
+        {friends.map((friend) => {
+            return (
+            <div key={friend.id}>
+                <h3>{friend.name}</h3>
+                <p>email: {friend.email}</p>
+                <p>age: {friend.age}</p>
+                <small>{friend.id}</small>
+            </div>
+            )
+            
+        })}
+        <MakeFriend />
         </>
     )
 }
