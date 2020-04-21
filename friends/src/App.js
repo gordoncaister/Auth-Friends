@@ -40,7 +40,6 @@ function App() {
         <Switch>
           <Route path="/login" component={Login}/>
           <PrivateRoute path="/friends" component={Friends} />
-          
         </Switch>
       
       </div>
