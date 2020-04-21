@@ -18,6 +18,16 @@ const Friends = () => {
             console.log(err)
         })
     },[])
+
+    function editFriend(e) {
+        
+        console.log(e)
+    }
+    const deleteFriend = (e) =>{
+        e.preventDefault();
+        console.log(e.target.value);
+    }
+
     
     console.log(friends)
     return (
@@ -29,6 +39,11 @@ const Friends = () => {
                 <p>email: {friend.email}</p>
                 <p>age: {friend.age}</p>
                 <small>{friend.id}</small>
+                <button onClick={(e)=> {
+                    e.preventDefault();
+                    editFriend(friend.id)
+                }}>Edit</button>
+                <button onClick={deleteFriend}>Delete</button>
             </div>
             )
             

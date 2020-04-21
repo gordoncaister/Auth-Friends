@@ -9,7 +9,8 @@ const MakeFriend = () => {
     const [age, setAge, handleAge] = useInput("");
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        axiosWithAuth()
+        .post("http://localhost:5000/api/friends",{name:name,email:email,age:age,id:Date.now()})
     }
 
     return (
