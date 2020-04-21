@@ -16,12 +16,12 @@ function App() {
     <Router>
       <div className="App">
         <nav>
-          <li><Link to="/login" >login</Link></li>
+          <Link to="/login">Login</Link>
         </nav>
         <Switch>
-          <Route path = "/login" component={Login}>
+          <Route path="/login" component={Login}/>
 
-          </Route>
+          
         </Switch>
       
       </div>

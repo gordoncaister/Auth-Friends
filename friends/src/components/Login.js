@@ -1,10 +1,21 @@
 import React from "react"
+const Login = () => {
 
-export default login = () => {
+
 
     return(
-        <div>
-            Hello from login
-        </div>
+        <>
+        <form>
+            <label>Username
+            <input/>
+            </label>
+            <label>Password
+            <input/>
+            </label>
+            <button>Submit</button>
+        </form>   
+        </>
     )
 }
+
+export default Login
