@@ -20,12 +20,14 @@ const Friends = () => {
     },[])
 
     function editFriend(e) {
-        
+        axiosWithAuth()
+        .put(`http://localhost:5000/api/friends/${e}`,{name:"Monkey Moo",email:"monkeymoo@lovesyou.too",age:"4"})
         console.log(e)
     }
     const deleteFriend = (e) =>{
-        e.preventDefault();
-        console.log(e.target.value);
+        axiosWithAuth()
+        .delete(`http://localhost:5000/api/friends/${e}`)
+        console.log(e)
     }
 
     
@@ -38,12 +40,13 @@ const Friends = () => {
                 <h3>{friend.name}</h3>
                 <p>email: {friend.email}</p>
                 <p>age: {friend.age}</p>
-                <small>{friend.id}</small>
-                <button onClick={(e)=> {
-                    e.preventDefault();
+                <br></br>
+                <button type="submit" onClick={(e)=> {
                     editFriend(friend.id)
                 }}>Edit</button>
-                <button onClick={deleteFriend}>Delete</button>
+                <button type="submit" onClick={(e)=> {
+                    deleteFriend(friend.id)
+                }}>Delete</button>
             </div>
             )
             
