@@ -2,6 +2,8 @@ import React from 'react';
 
 import './App.css';
 import Login from "./components/Login"
+import Friends from "./components/Friends"
+
 
 import {
   BrowserRouter as Router,
@@ -37,7 +39,7 @@ function App() {
         </nav>
         <Switch>
           <Route path="/login" component={Login}/>
-
+          <PrivateRoute path="/friends" component={Friends} />
           
         </Switch>
       
