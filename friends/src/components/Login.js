@@ -7,12 +7,15 @@ const Login = () => {
 
     const [username, setUsername, handleUsername] = useInput("Lambda School");
     const [password, setPassword, handlePassword] = useInput("i<3Lambd4");
+    const [token, setToken] = useState("")
+    
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        Axios.post("/api/login",{ username: username, password: password })
+        Axios.post("http://localhost:5000/api/login",{ username: username, password: password })
         .then(res =>{
             console.log(res)
+            setToken(res.data.payload)
         })
         .catch(err => {
             console.log(err)
