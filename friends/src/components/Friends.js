@@ -11,12 +11,14 @@ const Friends = () => {
         .get("http://localhost:5000/api/friends")
         .then( res => {
             console.log(res)
+            setFriends(res.data)
         })
         .catch (err => {
             console.log(err)
         })
-    })
+    },[])
     
+    console.log(friends)
     return (
         <>
         Hello from friends?
